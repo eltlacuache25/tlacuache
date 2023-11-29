@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<!--begin::Head-->
+{% include 'root/base/head.html' %}
+<!--end::Head-->
+
+<!--begin::Body-->
+
+<body id="kt_body" class="header-fixed header-tablet-and-mobile-fixed toolbar-enabled">
+    <!--begin::Theme mode setup on page load-->
+    {% include 'root/theme/main.html' %}
+    <!--end::Theme mode setup on page load-->
+
+    <!--Begin::Google Tag Manager (noscript) -->
+    {% include 'root/google/main.html' %}
+    <!--End::Google Tag Manager (noscript) -->
+
+    <!--begin::Main-->
+    <!--begin::Root-->
+    <div class="d-flex flex-column flex-root">
+        <!--begin::Page-->
+        <div class="page d-flex flex-row flex-column-fluid">
+            <!--begin::Wrapper-->
+            <div class="wrapper d-flex flex-column flex-row-fluid" id="kt_wrapper">
+                <!--begin::Header-->
+                {% include 'root/main/wrapper/header/main.html' %}
+                <!--end::Header-->
+
+                <!--begin::Toolbar-->
+                <!--{ % include 'root/main/wrapper/toolbar/main.html' % }-->
+                <!--end::Toolbar-->
+
+                <!--begin::Container-->
+                <div id="kt_content_container" class="d-flex flex-column-fluid align-items-start  container-xxl ">
+                    <!--begin::Post-->
+                    <div class="content flex-row-fluid" id="kt_content">
+                        <!--begin::Home card-->
+                        <div class="card">
+                            <!--begin::Body-->
+                            <div class="card-body p-lg-20">
+                                <!--begin::Articles-->
+                                <!--{ % include 'root/main/wrapper/container/sections/articles.html' % }-->
+                                <!--end::Articles-->
+
+                                <!--begin::Tutorials-->
+                                <!--{ % include 'root/main/wrapper/container/sections/tutorials.html' % }-->
+                                <!--end::Tutorials-->
+
+                                {% block content %}
+                                {% endblock content %}
+
+                                <!--begin::Hottest-->
+                                <!--{ % include 'root/main/wrapper/container/sections/hottest.html' % }-->
+                                <!--end::Hottest-->
+
+                                <!--begin::latest galery-->
+                                <!--{ % include 'root/main/wrapper/container/sections/galery.html' % }-->
+                                <!--end::latest galery-->
+
+                            </div>
+                            <!--end::Body-->
+                        </div>
+                        <!--end::Home card-->
+                    </div>
+                    <!--end::Post-->
+                </div>
+                <!--end::Container-->
+
+                <!--begin::Footer-->
+                {% include 'root/main/wrapper/footer/main.html' %}
+                <!--end::Footer-->
+            </div>
+            <!--end::Wrapper-->
+        </div>
+        <!--end::Page-->
+    </div>
+    <!--end::Root-->
+
+    <!--begin:: -->
+    <!--{ % include 'main/drawers/main.html' % }-->
+    <!--end::Drawers-->
+    <!--end::Main-->
+
+    <!--begin::Engage-->
+    <!--{ % include 'engage/main.html' % }-->
+    <!--end::Engage-->
+
+    <!--begin::Scrolltop-->
+    {% include 'root/scrolltop/main.html' %}
+    <!--end::Scrolltop-->
+
+    <!--begin::Modals-->
+    <!--{ % include 'modals/main.html' % }-->
+    <!--end::Modals-->
+
+    <!--begin::Javascript-->
+    {% include 'root/javascript/main.html' %}
+    <!--end::Javascript-->
+</body>
+<!--end::Body-->
+
+</html>

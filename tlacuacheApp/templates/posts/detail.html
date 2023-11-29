@@ -1,0 +1,161 @@
+{% extends 'root/base/base.html' %}
+
+{% block content %}
+<div class="d-flex flex-column flex-xl-row">
+    <!--begin::Content-->
+    <div class="flex-lg-row-fluid me-xl-15">
+        <!--begin::Post content-->
+        <div class="mb-17">
+            <!--begin::Wrapper-->
+            <div class="mb-8">
+                <!--begin::Info-->
+                <div class="d-flex flex-wrap mb-6">
+                    <!--begin::Item-->
+                    <div class="me-9 my-1">
+                        <!--begin::Icon-->
+                        <i class="ki-duotone ki-element-11 text-primary fs-2 me-1"><span class="path1"></span><span
+                                class="path2"></span><span class="path3"></span><span class="path4"></span></i>
+                        <!--end::Icon-->
+
+                        <!--begin::Label-->
+                        <span class="fw-bold text-gray-500">{{post.date}}</span>
+                        <!--end::Label-->
+                    </div>
+                    <!--end::Item-->
+                </div>
+                <!--end::Info-->
+
+                <!--begin::Title-->
+                <a class="text-gray-900 text-hover-primary fs-1 fw-bold">
+                    {{post.title}}
+                </a>
+                <!--end::Title-->
+
+                <!--begin::Container-->
+                <div class="overlay mt-8">
+                    <!--begin::Image-->
+                    <div class="bgi-no-repeat bgi-position-center bgi-size-cover card-rounded min-h-800px"
+                        style="background-image:url('{{ post.image }}')">
+                    </div>
+                    <!--end::Image-->
+
+                    <!--begin::Links-->
+                    <div class="overlay-layer card-rounded bg-dark bg-opacity-25">
+                        <a href="{{post.url}}" target="_blank" class="btn btn-primary">Ver en facebook</a>
+                    </div>
+                    <!--end::Links-->
+                </div>
+                <!--end::Container-->
+            </div>
+            <!--end::Wrapper-->
+
+            <!--begin::Description-->
+            <div class="fs-5 fw-semibold text-gray-600">
+                <!--begin::Text-->
+                <p class="mb-17">{{ post.description }}</p>
+                <!--end::Text-->
+            </div>
+            <!--end::Description-->
+
+            <!--begin::Block-->
+            <div class="d-flex align-items-center border-1 border-dashed card-rounded p-5 p-lg-10 mb-14">
+                <!--begin::Section-->
+                <div class="text-center flex-shrink-0 me-7 me-lg-13">
+                    <!--begin::Avatar-->
+                    <div class="symbol symbol-70px symbol-circle mb-2">
+                        <img src="https://preview.keenthemes.com/metronic8/demo16/assets/media/avatars/300-2.jpg"
+                            class="" alt="">
+                    </div>
+                    <!--end::Avatar-->
+
+                    <!--begin::Info-->
+                    <div class="mb-0">
+                        <a href="https://preview.keenthemes.com/metronic8/demo16/../demo16/pages/user-profile/overview.html"
+                            class="text-gray-700 fw-bold text-hover-primary">Jane Johnson</a>
+
+                        <span class="text-gray-500 fs-7 fw-semibold d-block mt-1">Co-founder</span>
+                    </div>
+                    <!--end::Info-->
+                </div>
+                <!--end::Section-->
+
+                <!--begin::Text-->
+                <div class="mb-0 fs-6">
+                    <div class="text-muted fw-semibold lh-lg mb-2">
+                        First, a disclaimer – the entire process of writing a blog post often takes more than a couple
+                        of hours, even if you can type
+                        eighty words per minute and your writing skills are sharp writing a blog post often takes more
+                        than a couple.
+                    </div>
+
+                    <a href="https://preview.keenthemes.com/metronic8/demo16/../demo16/pages/user-profile/overview.html"
+                        class="fw-semibold link-primary">Author’s Profile</a>
+                </div>
+                <!--end::Text-->
+            </div>
+            <!--end::Block-->
+
+            <!--begin::Icons-->
+            <div class="d-flex flex-center">
+                <!--begin::Icon-->
+                <a href="https://www.facebook.com/profile.php?id=61553692342844" target="_blank" class="mx-4">
+                    <img src="https://preview.keenthemes.com/metronic8/demo16/assets/media/svg/brand-logos/facebook-4.svg"
+                        class="h-20px my-2" alt="">
+                </a>
+                <!--end::Icon-->
+
+                <!--begin::Icon-->
+                <a href="#" class="mx-4">
+                    <img src="https://preview.keenthemes.com/metronic8/demo16/assets/media/svg/brand-logos/instagram-2-1.svg"
+                        class="h-20px my-2" alt="">
+                </a>
+                <!--end::Icon-->
+
+                <!--begin::Icon-->
+                <a href="#" class="mx-4">
+                    <img src="https://preview.keenthemes.com/metronic8/demo16/assets/media/svg/brand-logos/twitter.svg"
+                        class="h-20px my-2" alt="">
+                </a>
+                <!--end::Icon-->
+            </div>
+            <!--end::Icons-->
+        </div>
+        <!--end::Post content-->
+    </div>
+    <!--end::Content-->
+
+    <!--begin::Sidebar-->
+    <div class="flex-column flex-lg-row-auto w-100 w-xl-300px mb-10">
+        <!--begin::Recent post-->
+        <div class="m-0">
+            <h4 class="text-gray-900 mb-7">Recent Posts</h4>
+
+            {% for x in posts %}
+            <!--begin::Item-->
+            <div class="d-flex mb-7">
+                <!--begin::Symbol-->
+
+                <div class="symbol symbol-60px symbol-2by3 me-4">
+                    <div class="symbol-label" style="background-image: url('{{x.image}}')">
+                    </div>
+                </div>
+                <!--end::Symbol-->
+
+                <!--begin::Title-->
+                <div class="m-0">
+                    <a href="{% url 'detail_posts' x.id %}" class="text-gray-900 fw-bold text-hover-primary fs-6">{{x.title}}</a>
+
+                    <div class="text-multiline-2">
+                        <span class="text-gray-600 fw-semibold d-block pt-1 fs-7 ">{{x.description}}</span>
+                    </div>
+                </div>
+                <!--end::Title-->
+            </div>
+            <!--end::Item-->
+            {% endfor %}
+        </div>
+        <!--end::Recent post-->
+    </div>
+    <!--end::Sidebar-->
+</div>
+{% endblock content %}

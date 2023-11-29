@@ -1,0 +1,62 @@
+{% extends 'root/base/base.html' %} {% block content %}
+<div class="mb-17">
+    <!--begin::Content-->
+    <div class="d-flex flex-stack mb-5">
+        <!--begin::Title-->
+        <h3 class="text-gray-900">Noticias</h3>
+        <!--end::Title-->
+    </div>
+    <!--end::Content-->
+
+    <!--begin::Separator-->
+    <div class="separator separator-dashed mb-9"></div>
+    <!--end::Separator-->
+
+    <!--begin::Row-->
+    <div class="row g-10">
+        {% for x in posts %}
+        <!--begin::Col-->
+        <div class="col-md-4">
+            <!--begin::Feature post-->
+            <div class="card-xl-stretch me-md-6">
+                <!--begin::Overlay-->
+                <a class="d-block overlay">
+                    <!--begin::Image-->
+                    <div class="overlay-wrapper bgi-no-repeat bgi-position-center bgi-size-cover card-rounded min-h-300px"
+                        style="background-image:url('{{ x.image }}')"></div>
+                    <!--end::Image-->
+                </a>
+                <!--end::Overlay-->
+
+                <!--begin::Body-->
+                <div class="mt-5">
+                    <!--begin::Title-->
+                    <a href="{% url 'detail_posts' x.id %}"
+                        class="fs-1 text-gray-900 fw-bold text-hover-primary text-gray-900 lh-base">
+                        {{x.title}}</a>
+                    <!--end::Title-->
+
+                    <!--begin::Text-->
+                    <div class="fw-semibold fs-5 text-gray-600 text-gray-900 my-4 text-multiline-3">
+                        {{x.description}}
+                    </div>
+                    <!--end::Text-->
+
+                    <!--begin::Content-->
+                    <div class="fs-6 fw-bold">
+                        <!--begin::Date-->
+                        <span class="text-muted">{{x.date}}</span>
+                        <!--end::Date-->
+                    </div>
+                    <!--end::Content-->
+                </div>
+                <!--end::Body-->
+            </div>
+            <!--end::Feature post-->
+        </div>
+        <!--end::Col-->
+        {% endfor %}
+    </div>
+    <!--end::Row-->
+</div>
+{% endblock content %}
