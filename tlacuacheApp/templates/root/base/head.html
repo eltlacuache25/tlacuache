@@ -1,5 +1,5 @@
 <head>
-    {% load static %}
+    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>El Tlacuache News</title>
@@ -7,16 +7,16 @@
     <meta name="keywords" content="El Tlacuache News, Noticias, Actualidad, Eventos, Información">
     <meta name="author" content="El Tlacuache News">
     <!-- Puedes incluir otras metaetiquetas según las necesidades de tu página -->
-    <link rel="icon" href="{% static 'img/352378425_642139971165530_8396473612799970870_n.jpg' %}" type="image/x-icon">
     <!-- Metaetiquetas para redes sociales (Open Graph) -->
     <meta property="og:title" content="El Tlacuache News">
     <meta property="og:description" content="Noticias frescas y actualizadas sobre diversos temas en El Tlacuache News">
-    <meta property="og:url" content="URL de tu página">
-    <meta property="og:image" content="URL de una imagen representativa">
-
+    <meta property="og:url" content="https://eltlacuachenews.com/">
+    
     <!--begin::Fonts(mandatory for all pages)-->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,400,500,600,700" />
     <!--end::Fonts-->
+    {% load static %}
+    <link rel="icon" href="{% static 'img/352378425_642139971165530_8396473612799970870_n.jpg' %}" type="image/x-icon">
 	<!--begin::Vendor Stylesheets(used for this page only)-->
 	<link href="{% static 'metronic8/demo3/assets/plugins/custom/datatables/datatables.bundle.css' %}" rel="stylesheet" type="text/css" />
 	<!--end::Vendor Stylesheets-->
