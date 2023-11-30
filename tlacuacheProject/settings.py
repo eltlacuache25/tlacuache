@@ -24,12 +24,6 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.environ.get('SECRET_KEY', default='your secret key')
 
-#---------------
-CREATE_SUPERUSER = True
-DJANGO_SUPERUSER_EMAIL = 'susanaguerrero482@gmail.com'
-DJANGO_SUPERUSER_PASSWORD = 'Tg4Wq9rP2'
-DJANGO_SUPERUSER_USERNAME = 'AndresGuerra'
-
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = 'RENDER' not in os.environ
 
