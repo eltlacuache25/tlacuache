@@ -51,10 +51,9 @@
                 <div class="overlay mt-8">
                     <!--begin::Image-->
                     <div class="bgi-no-repeat bgi-position-center bgi-size-cover card-rounded min-h-800px"
-                        style="background-image:url('{{ post.image }}')">
+                        style="background-image:url('/{{ post.image }}')">
                     </div>
                     <!--end::Image-->
-
                 </div>
                 <!--end::Container-->
             </div>
@@ -63,7 +62,7 @@
             <!--begin::Description-->
             <div class="fs-5 fw-semibold text-gray-600">
                 <!--begin::Text-->
-                <p class="mb-17">{{ post.description }}</p>
+                <p class="mb-17">{{ post.description }} - {{ post.description }}</p>
                 <!--end::Text-->
             </div>
             <!--end::Description-->
